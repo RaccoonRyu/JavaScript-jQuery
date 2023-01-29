@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연산자 예제 3</title>
+    <script>
+        // 대입 연산자 : 연산된 데이터를 변수에 저장할 때 사용
+        // 복합 대입 연산자 : 산술 연산자와 대입 연산자가 복합적으로 적용된 연산자
+        // 종류는 아래와 같다.
+        // A = B (대입)
+        // A += B === A = A + B (합한 결과 대입)
+        // A -= B === A = A - B (뺀 결과 대입)
+        // A *= B === A = A * B (곱한 결과 대입)
+        // A /= B === A = A / B (나눈 결과 대입)
+        // A %= B === A = A % B (나머지 결과 대입)
+
+        var num1 = 10;
+        var num2 = 3;
+
+        num1 += num2; // num1 = num1 + num2
+        document.write(num1, "<br/>"); // 13
+
+        num1 -= num2; // num1 = num1 - num2
+        document.write(num1, "<br/>"); // 10 (13 - 3)
+
+        num1 *= num2; // num1 = num1 * num2
+        document.write(num1, "<br/>"); // 30
+
+        num1 /= num2; // num1 = num1 / num2
+        document.write(num1, "<br/>"); // 10 (30 / 3)
+
+        num1 %= num2; // num1 = num1 % num2
+        document.write(num1, "<br/>"); // 1 (10 % 3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
