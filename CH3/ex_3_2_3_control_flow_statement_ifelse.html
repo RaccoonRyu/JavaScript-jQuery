@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 - if-else 예제 2</title>
+    <script>
+        // confirm() : 확인/취소 선택 창을 출력해줄 때 사용하는 메서드
+        // 선택 창에서 확인을 선택시 true를 반환하고, 취소를 선택시 false를 반환한다.
+        // 해당 예제에서는 confirm()과 if-else문을 사용하여 선택에 따라 결과 화면을 다르게 출력해본다.
+
+        var result = prompt("정말로 회원을 탈퇴하시겠습니까");
+
+        if(result) { // 선택 창에서 확인 선택시 true 반환
+            document.write("탈퇴 처리되었습니다.");
+        } else { // 선택 창에서 취소 선택시 false 반환
+            document.write("탈퇴 취소되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
