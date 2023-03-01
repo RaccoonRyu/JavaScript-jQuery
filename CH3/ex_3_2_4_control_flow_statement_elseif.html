@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 - else-if 예제 1</title>
+    <script>
+        // else if 문
+        // 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드
+        // 2개 이상의 조건식을 차례로 검사하며 만족(ture)하는 값이 나오면 그에 해당하는 코드를 실행하고 조건문을 종료
+        // 만족하는 값이 하나도 없으면 else 문의 중괄호{} 에 있는 코드를 실행
+
+        var mon = prompt("현재는 몇 월입니까?", "0");
+
+        if(mon >= 9 && mon <= 11) { // 9 - 11 월
+            document.write("독서의 계절 가을이네요.");
+        }if(mon >= 6 && mon <= 8) { // 6 - 8 월
+            document.write("여행가기 좋은 여름이네요.");
+        }if(mon >= 3 && mon <= 5) { // 3 - 5 월
+            document.write("햇살 가득한 봄이네요.");
+        } else {
+            document.write("스키의 계절 겨울이네요.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
