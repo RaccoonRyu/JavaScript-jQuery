@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 - if 예제 1</title>
+    <script>
+        // if문
+        // 조건을 만족(true)할 경우에만 코드를 실행
+        // 조건식은 Boolean() 내장 메서드와 마찬가지로 그 어떤 데이터를 입력해도 true / false를 반환
+
+        var num = 10;
+        if(num < 500) { // true 반환
+            document.write("hello");
+        }
+
+        if(0) { // Boolean() 내장 메서드에 0을 입력했을 때와 마찬가지의 결과. false 반환
+            document.write("hello");
+        }
+
+        var walkAmount = prompt("당신의 하루 걷는 양은 몇 보인가요?", "0");
+
+        if(walkAmount >= 10000) {
+            document.write("매우 좋은 습관을 지니고 계시는군요!", "<br>");
+        }
+        document.write("========== The End ==========");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
