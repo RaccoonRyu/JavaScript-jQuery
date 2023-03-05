@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 - for 예제 4</title>
+    <script>
+        // 반복문
+        // 원하는 횟수만큼 반복되는 코드를 작성할 때 사용한다.
+        // 종류로는 while, do while, for문이 있다.
+
+        // for문
+        // 조건식을 만족할 때 까지 특정 코드를 반복하여 실행한다.
+        // 사용 방법은 while 문과 같지만 while문보다 사용하기 편해 사용 빈도가 높은 문장이다.
+        // 실행 순서는 초깃값 -> 조건식 -> 자바스크립트 코드 -> 증감식 -> 조건식의 순서이다.
+        
+        // 중첩 for문
+        // for문 안에 for문을 사용한 것
+        // 예시로는 n열 m행의 table을 만들때 사용한다. (물론 그 외 다양한 용도로 사용함!!)
+
+        for(var i = 1; i <= 3; i++) {
+            for(var k = 1; k <= 2; k++) { // 바깥쪽의 반복문(i)이 1회 실행되면 안쪽의 반복문(k)은 2회 실행된다.
+                document.write(i + "행" + k + "열", "<br>"); 
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
