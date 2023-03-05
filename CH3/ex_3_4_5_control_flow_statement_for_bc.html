@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 - for 예제 2</title>
+    <script>
+        // 반복문
+        // 원하는 횟수만큼 반복되는 코드를 작성할 때 사용한다.
+        // 종류로는 while, do while, for문이 있다.
+
+        // for문
+        // 조건식을 만족할 때 까지 특정 코드를 반복하여 실행한다.
+        // 사용 방법은 while 문과 같지만 while문보다 사용하기 편해 사용 빈도가 높은 문장이다.
+        // 실행 순서는 초깃값 -> 조건식 -> 자바스크립트 코드 -> 증감식 -> 조건식의 순서이다.
+        
+        // break문
+        // 반복문인 while문 또는 for문에서 break문을 실행하면 조건식과 상관없이 강제로 반복문을 종료한다.
+        // 따라서 break문은 반복문을 강제로 종료할 때 사용한다.
+        
+        for(var i = 1; i <= 10; i++) {
+            if(i == 6) {
+                break; // i의 값이 6이면 break문으로 반복문을 종료한다.
+            }
+            document.write(i + "<br>");
+        }
+
+        // 반복문 종료 후 출력될 문장
+        document.write("===== THE BREAK END =====");
+        document.write("<br>");
+
+        // continue문
+        // 반복문에서만 사용할 수 있다.
+        // while문에서 사용할 경우 continue문 다음에 오는 코드는 무시하고 바로 조건식으로 이동해 조건검사를 한다.
+        // for문에서 사용할 경우 continue문 다음에 오는 코드는 무시하고 바로 증감식으로 이동하여 증감 연산을 실행한다.
+        
+        for(var i = 1; i <= 10; i++) {
+            if(i % 2 == 0) {
+                continue; // i가 2의 배수일 경우 다음에 오는 코드를 무시하고 바로 반복문의 증감식을 수행한다.
+            }
+            document.write(i + "<br>");
+        }
+
+        // 반복문 종료 후 출력될 문장
+        document.write("===== THE CONTINUE END =====")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
