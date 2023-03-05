@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 - 중첩 if문 1</title>
+    <script>
+        // 중첩 if문
+        // 조건문 안에 조건문이 있는 형태 (조건문1 속에 조건문2)
+        // 바깥쪽에 있는 조건문인 조건식1을 만족해야만 안쪽에 있는 조건문인 조건문2를 검사한다.
+        // 조건식2를 만족하지 않으면 바깥쪽 조건문인 조건식1의 중괄호 안에 있는 코드만 실행하고 종료한다.
+
+        var id = "easy1004"; // 아이디
+        var pw = "112233"; // 비밀번호
+
+        var user_id = prompt("아이디는?", ""); // 위의 아이디와 검증할 아이디 입력
+        var user_pw = prompt("비밀번호는?", ""); // 위의 비밀번호와 검증할 비밀번호 입력
+
+        if(id == user_id) { // 아이디가 일치시 실행
+            if(pw == user_pw) { // 비밀번호까지 일치시 실행
+                document.write(user_id+"님 반갑습니다.");
+            } else { // 비밀번호가 일치하지 않을경우 실행
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload(); // 브라우저 새로고침
+            }
+        } else { // 아이디가 불일치시 실행
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
