@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 - for 예제 2</title>
+    <style>
+        .red {
+            color : red;
+        }
+
+        .green {
+            color : green;
+        }
+
+
+        .aqua {
+            color : aqua;
+        }
+
+    </style>
+    <script>
+        // 반복문
+        // 원하는 횟수만큼 반복되는 코드를 작성할 때 사용한다.
+        // 종류로는 while, do while, for문이 있다.
+
+        // for문
+        // 조건식을 만족할 때 까지 특정 코드를 반복하여 실행한다.
+        // 사용 방법은 while 문과 같지만 while문보다 사용하기 편해 사용 빈도가 높은 문장이다.
+        // 실행 순서는 초깃값 -> 조건식 -> 자바스크립트 코드 -> 증감식 -> 조건식의 순서이다.
+        
+        for(var i = 1; i <= 100; i++) { // 초깃값; 조건식; 증감식 작성
+           if(i % 5 == 0 && i % 7 != 0) { // i의 값이 5의 배수이면서 7의 배수가 아니면 실행
+                document.write("<p class='red'>" + i + "</p>");
+           } else if(i % 7 == 0 && i % 5 != 0) { // i의 값이 7의 배수이면서 5의 배수가 아니면 실행
+                document.write("<p class='green'>" + i + "</p>");
+           } else if(i % 7 == 0 && i % 5 == 0) { // i의 값이 7의 배수이면서 5의 배수이면 실행
+                document.write("<p class='aqua'>" + i + "</p>");
+           }
+        }
+
+        // 상술한 코드는 반복문 안의 조건에 따라 총 100회 실행된다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
