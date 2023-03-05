@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문 - switch 예제 1</title>
+    <script>
+        // 선택문 (switch)
+        // 변수에 저장된 값과 switch문에 있는 경우(case)의 값을 검사하여
+        // 변수와 경우의 값에서 일치하는 값이 있을 때 그에 해당하는 코드를 실행한다.
+        // if문과 용도는 비슷하나 if문은 만족하는 데이터가 여러 개일 경우 주로 사용하고,
+        // switch문은 여러 경우의 값 중 일치하는 데이터를 찾아 그에 해당하는 코드를 실행시킬 때 사용한다.
+
+        // 변수에 저장된 값은 switch문을 만나면 case의 값을 하나씩 검사하고,
+        // 일치하는 데이터가 있으면 그에 해당하는 코드를 실행한 후
+        // break 문을 만나 switch 문을 종료한다.
+        // 만약 경우(case)의 값 중에 일치하는 데이터가 없으면 마지막 default에 있는 코드를 실행하고 switch문을 종료한다.
+
+        var site = prompt("구글, 네이버, 다음 중 즐겨 사용하는 포탈 검색 사이트는?", "");
+        var url = "";
+
+        switch(site) { // prompt창에서 검사할 site명 가져옴
+            case "구글":
+                url = "www.google.com";
+            break;
+            case "네이버":
+                url = "www.naver.com";
+            break;
+            case "다음":
+                url = "www.daum.net";
+            break;
+            default: alert("보기 중에 없는 사이트를 입력하셨습니다.");
+        }
+
+        if(url) {
+            location.href = "http://" + url; // url에 저장된 주소로 이동
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
