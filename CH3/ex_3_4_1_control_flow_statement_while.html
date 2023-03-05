@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 - while 예제 2</title>
+    <style>
+        .blue {
+            color : blue;
+        }
+
+        .red {
+            color : red;
+        }
+    </style>
+    <script>
+        // 반복문
+        // 원하는 횟수만큼 반복되는 코드를 작성할 때 사용한다.
+        // 종류로는 while, do while, for문이 있다.
+
+        // while문
+        // 조건식을 만족할 때까지 중괄호({}) 안에 있는 코드를 여러 회 반복하여 실행한다.
+        // 실행 순서는 1) 조건식을 검사하고, 만족하면 2) 중괄호 안에 있는 코드와 증감식을 실행한 다음 3) 다시 조건식을 검사한다.
+
+        var i = 20;
+        while(i >= 10) { // 조건식을 만족하고
+            if(i % 2 == 0) { // 반복문 아래 조건식을 만족하는 경우 빨간색으로 i 표시
+                document.write("<p class='blue'>" + i + "</p>");
+            } else { // 반복문 아래 조건식을 불만족하는 경우 파란색으로 i 표시
+                document.write("<p class='red'>" + i + "</p>");
+            }
+            i--;
+        }
+
+        // 조건식을 불만족(i가 9이하일 때)하여 while문이 끝날 경우 아래 코드가 실행된다.
+        document.write("========== THE END ==========");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
