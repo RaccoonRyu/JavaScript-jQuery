@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 날짜 객체 예제 1</title>
+    <script>
+        // 날짜 정보 객체
+        // 날짜나 시간 관련 정보를 제공받고 싶을 때 생성하는 객체
+        // 날짜와 관련된 작업을 할 때 유용함 (Date 객체의 다양한 메서드를 이용 가능)
+        // ex) 현재 날짜를 제공하는 방법, 특정 날짜 정보를 제공하는 방법, D-day 계산
+        // Date 객체 생성 기본형 : 참조변수 = new Date();, 현재 날짜의 정보를 제공한다.
+        // 특정 날짜 Date 객체 생성 : 참조변수 = new Date("연/월/일"); or 참조변수 = new Date(연, 월-1, 일);
+        
+        var today = new Date(); // 현재 날짜 정보를 가진 객체 생성
+        var nowMonth = today.getMonth(); // 월 정보를 가져옴 (현재 월 - 1)
+        nowDate = today.getDate(); // 일 정보를 가져옴
+        nowDay = today.getDay(); // 요일 정보를 가져옴 (일요일 0 ~ 토요일 6)
+
+        document.write("<h1> 오늘 날짜 정보 </h1>");
+        document.write("현재 월 : " + nowMonth, "<br>"); // 2 출력 (현재 월 3 - 1)
+        document.write("현재 일 : " + nowDate, "<br>"); // 7 출력
+        document.write("현재 요일 : " + nowDay, "<br>"); // 2 출력 (화요일 2)
+
+        var worldcup = new Date(2002, 4, 31); // 월드컵 개막일 (2002.05.31) 날짜 정보 객체 생성
+        var theMonth = worldcup.getMonth();
+        var theDate = worldcup.getDate();
+        var theDay = worldcup.getDay();
+
+        document.write("<h1> 월드컵 개막일 날짜 정보 </h1>");
+        document.write("2002 월드컵 개막월 : " + theMonth, "<br>"); // 4 출력 (개막 월 5 - 1)
+        document.write("2002 월드컵 개막일 : " + theDate, "<br>"); // 31 출력
+        document.write("2002 월드컵 개막 요일 : " + theDay, "<br>"); // 5 출력 (금요일 5)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
