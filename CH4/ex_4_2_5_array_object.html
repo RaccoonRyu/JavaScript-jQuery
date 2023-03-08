@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 배열 객체 예제 1</title>
+    <script>
+        // 배열 객체
+        // 여러 개의 데이터를 하나의 장소에 저장하기 위해 사용한다.
+        // 기본형은
+        // 1) var 참조변수 = new Array();
+        // 2) var 참조변수 = new Array(값1, 값2, 값3, ... , 값N);
+        // 3) var 참조변수 = [값1, 값2, 값3, ... , 값N];
+        // 배열을 선언하면 각각의 데이터는 나누어진 저장소에 나열되며, 각 저장소에는 인덱스 번호(번지수)가 부여된다.
+        // 인덱스 번호는 0부터 시작한다.
+        // 배열 객체에 저장된 데이터를 불러올 때는 참조변수[인덱스 번호]; 를 사용한다.
+
+        var arr = [30, "따르릉", true];
+
+        document.write("<h3> 배열값 가져오기 1 </h3>");
+        document.write(arr[0], "<br>");
+        document.write(arr[1], "<br>");
+        document.write(arr[2], "<br>");
+
+        document.write("<h3> 배열 값 가져오기 2 </h3>");
+        for (var i = 0; i < arr.length; i++) {
+            document.write(arr[i], "<br>");
+        }
+
+        document.write("<h3> 배열 값 가져오기 3 </h3>");
+        for (i in arr) {
+            document.write(arr[i], "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
