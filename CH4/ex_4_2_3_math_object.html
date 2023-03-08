@@ -19,8 +19,13 @@
         var roundNum = Math.round(num); // 소수점 첫째 자리 반올림
         var floorNum = Math.floor(num); // 소수점 첫째 자리 내림
         var ceilNum = Math.ceil(num); // 소수점 첫째 자리 올림
-        var mdNum = Math.random(); // 0과 1 사이의 난수 발생
+        var mdNum = Math.random(); // 0과 1 사이의 난수 발생 -> 만약 지정한 숫자가 있을 경우 해당 구간에서 난수 생성 
         var piNum = Math.PI; // 원주율 상수를 반환
+
+        // 난수를 발생하여 원하는 구간 정수의 값 구하기
+        // Math.floor(Math.random()*(최댓값-최솟값+1))+최솟값;
+        var rand10Num = Math.random()*10; // 0~10까지 실수로 난수 반환
+        var floorRand10Num = Math(Math.random()*11); // 0~10까지 난수를 발생하여 소수점 값 제거(정수화, floor가 내림이기 때문에 11을 사용)
 
         document.write(maxNum, "<br>");
         document.write(minNum, "<br>");
@@ -29,6 +34,8 @@
         document.write(ceilNum, "<br>");
         document.write(mdNum, "<br>");
         document.write(piNum, "<br>");
+        document.write(rand10Num, "<br>");
+        document.write(floorRand10Num, "<br>");
     </script>
 </head>
 <body>
