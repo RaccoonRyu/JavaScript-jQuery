@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 수학 객체 예제 1</title>
+    <script>
+        // 수학 객체
+        // 자바스크립트 내장 객체 중 수학과 관련된 기능, 속성을 제공하는 객체
+        // 일반적인 사칙연산은 산술 연산자를 사용하면 되나,
+        // 최댓값, 최솟값, 반올림값 등은 산술 연산자로 구할 수 없다.
+        // 이런 수학과 관련된 일련의 작업은 수학 객체와 해당 객체의 메서드로 처리한다.
+
+        var num = 2.1234;
+
+        var maxNum = Math.max(10, 5, 8, 30); // 최댓값 30
+        var minNum = Math.min(10, 5, 8, 30); // 최솟값 5
+        var roundNum = Math.round(num); // 소수점 첫째 자리 반올림
+        var floorNum = Math.floor(num); // 소수점 첫째 자리 내림
+        var ceilNum = Math.ceil(num); // 소수점 첫째 자리 올림
+        var mdNum = Math.random(); // 0과 1 사이의 난수 발생
+        var piNum = Math.PI; // 원주율 상수를 반환
+
+        document.write(maxNum, "<br>");
+        document.write(minNum, "<br>");
+        document.write(roundNum, "<br>");
+        document.write(floorNum, "<br>");
+        document.write(ceilNum, "<br>");
+        document.write(mdNum, "<br>");
+        document.write(piNum, "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
