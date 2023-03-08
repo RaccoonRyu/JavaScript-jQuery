@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 날짜 객체 예제 2</title>
+    <script>
+        // 날짜 정보 객체
+        // 날짜나 시간 관련 정보를 제공받고 싶을 때 생성하는 객체
+        // 날짜와 관련된 작업을 할 때 유용함 (Date 객체의 다양한 메서드를 이용 가능)
+        // ex) 현재 날짜를 제공하는 방법, 특정 날짜 정보를 제공하는 방법, D-day 계산
+        // Date 객체 생성 기본형 : 참조변수 = new Date();, 현재 날짜의 정보를 제공한다.
+        // 특정 날짜 Date 객체 생성 : 참조변수 = new Date("연/월/일"); or 참조변수 = new Date(연, 월-1, 일);
+        
+        var today = new Date(); // 현재 날짜 정보를 가진 객체 생성
+        var nowYear = today.getFullYear // 현재 연도 정보를 가져옴
+
+        var theDate = new Date(nowYear, 11, 31); // 올해 연말의 날짜 정보 객체 생성
+        var diffDate = theDate.getTime() - today.getTimea90; // 연말까지 남은 날 = 연말 날짜 - 현재 날짜 (밀리초 단위)
+
+        var result = Math.ceil(diffDate / (60 * 1000 * 60 * 24)); // 계산한 값을 일 단위로 계산 후 오늘 날짜까지 포함하기 위한 Math.ceil()
+        document.write("연말 D-day : " + result + "일 남았습니다.");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
