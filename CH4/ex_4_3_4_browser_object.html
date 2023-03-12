@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델 예제 3-2</title>
+    <script>
+        // 브라우저 객체
+        // 브라우저에 내장된 객체를 의미함
+        // window는 브라우저 객체의 최상위 객체이며, window 객체에는 하위 객체가 포함되어 있다.
+        // 즉, 계층적 구조로 이뤄져 있으며, 이를 브라우저 객체 모델이라고 한다.
+
+        // window 객체
+        // 브라우저 객체의 최상위 객체
+        
+        // 일정한 시간 이후에 코드 실행하고 종료하기
+        // setTimeout() 메서드 : 일정한 시간 후에 코드를 한 번만 실행하고 종료
+        // 기본형 1 : var 참조변수 = setTimeout(function() {자바스크립트 코드}, 시간간격(msc)); // 시간 작성 기준은 밀리초
+        // 기본형 2 : var 참조변수 = setTimeout("자바스크립트 코드", 시간간격(msc));
+
+        // clearTimeout() 메서드 : setTimeout() 메서드를 취소
+        // 기본형 : clearTimeout(setTimeout()을 참조한 변수);
+        
+        var addNum = 0;
+        var auto = setTimeout(function() {
+            addNum++;
+            console.log(addNum);
+        }, 5000);
+    </script>
+</head>
+<body>
+    <h1>일정 시간 간격으로 한번만 값 증감 시키기</h1>
+    <div>개발자 도구의 콘솔 패널을 열어 확인하세요.</div>
+</body>
+</html>
