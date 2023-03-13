@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 함수 예제 3</title>
+    <script>
+        // 매개변수가 있는 함수 정의문
+        // 기본 함수 정의문은 함수 안에 있는 코드를 실행할 때 단순히 함수명으로 호출해서 코드를 실행한다.
+        // 즉, 함수를 호출할 때 값을 전달할 수 없다.
+        // 하지만 매개변수가 있는 함수 정의문은 함수를 호출할 때 전달하고자 하는 값을 입력하여 호출할 수 있다.
+        // 이 때 전달된 값은 매개변수가 받아 함수 정의문에서 사용할 수 있게 된다.
+        // 기본형 : function 함수명(매개변수 1, 매개변수 2, ... , 매개변수 n) { 자바스크립트 코드; }
+        // 호출 : 함수명(데이터1, 데이터 2, ... , 데이터 n); -> 함수 정의문의 매개변수와 함수 호출시 사용한 데이터가 작성된 순서대로 1대1 매칭된다.
+
+        // 함수 호출 시 함수의 매개변수 이름과 주소에 데이터를 전달해 호출하는 예제
+        function myFnc(name, area) {
+            document.write("안녕하세요. " + name + "입니다. ", "<br>");
+            document.write("사는 곳은 " + area + "입니다. ", "<br><br>");
+        }
+
+        myFnc("홍당무", "서울"); // 안녕하세요 홍당무 입니다 / 사는 곳은 서울 입니다
+        myFnc("깍두기", "부산"); // 안녕하세요 깍두기 입니다 / 사는 곳은 부산 입니다
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
