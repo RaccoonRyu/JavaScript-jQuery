@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 함수 예제 2</title>
+    <script>
+        // 함수
+        // 자바스크립트 코드를 메모리에 저장했다가 필요할 때마다 호출하여 사용할 수 있다.
+
+        // 기본 함수 정의문
+        // - 함수 정의문 : 함수를 사용하여 코드를 저장한 것
+        // - 기본형 : function 함수명() { 자바스크립트 코드; }
+
+        // 함수 정의문을 이용해 배경색을 변경하는 예제
+        var color = ["white", "yellow", "aqua", "purple"];
+
+        var i = 0;
+        function changeColor() {
+            i++;
+            if(i >= color.length) {
+                i = 0; // i의 값이 4 이상이면 i에 0을 대입해 화면색을 하얀색으로 초기화
+            }
+
+            // getElementById() : id값을 이용해 문서 객체(태그)를 선택하는 메서드
+            // CSS의 아이디 선택자와 비슷한 역할
+            var bodyTag = document.getElementById("theBody");
+            // 선택한 문서 객체에 스타일을 적용하기 위해 문서 객체의 style 속성에 접근하고, 적용하고자 하는 속성에 새 값을 입력한다.
+            bodyTag.style.backgroundColor = color[i];
+        }
+    </script>
+</head>
+<body id="theBody">
+    <!-- 아래 버튼을 클릭하면 changeColor() 함수를 호출한다. -->
+    <button onclick="changeColor();">배경색 바꾸기</button>
+</body>
+</html>
