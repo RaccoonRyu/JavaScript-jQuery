@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 스코프 예제 3</title>
+    <script>
+        // 전역과 지역을 나누는 이유
+        // 여러 명의 개발자가 프로젝트를 수행할 때 같은 이름의 전역 변수/함수를 사용하면 충돌이 발생할 수 있으므로
+        // 이를 방지하기 위해 전역과 지역을 분리한다.
+
+        // 즉시 실행 함수
+        // 지역 함수를 사용하여 함수를 선언하면 함수가 충돌하는 것을 방지할 수 있다.
+        // 이 경우 지역 함수 선언시 즉시 실행 함수로 선언하면, 함수 선언과 동시에 함수를 호출할 수 있다.
+        // 기본형 (function() { 자바스크립트 코드; <- 이 부분에 지역 변수와 지역 함수를 선언한다 }());
+
+        (function() {
+            var num = 100;
+            function menu() { // 얘가 호출된다.
+                num += 100;
+                alert(num);
+            }
+            menu(); // 얘를 호출하면
+        }());
+
+        (function() {
+            var num = 100;
+            function menu() {
+                alert(num);
+            }
+        }());
+
+
+
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
