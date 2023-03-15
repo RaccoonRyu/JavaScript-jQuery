@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 심화 예제 3</title>
+    <script>
+        // 재귀 함수
+        // 함수 정의문 내에서 작성한 코드로 함수를 다시 호출하는 함수
+        // 함수를 반복문처럼 여러 번 호출하기 위해 사용한다.
+        // 기본형 : function myFnc() { 자바스크립트 코드; myFnc(); } myFnc();
+
+        var num = 0;
+        function testFnc() {
+            num++;
+            document.write(num, "<br>");
+            if(num == 10) return;
+
+            testFnc();
+        }
+
+        testFnc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
