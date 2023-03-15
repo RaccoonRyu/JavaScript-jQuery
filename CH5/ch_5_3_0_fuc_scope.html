@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 스코프 예제 1</title>
+    <script>
+        // 함수 스코프
+        // 스코프 : 사전적 의미는 범위. JS에서는 변수 또는 함수의 유효 범위를 가리킨다.
+        // 전역 변수 : 자바스크립트 어디에서든 사용할 수 있는 변수 -> 함수 밖에 선언
+        // 지역 변수 : 함수 스코프 내에서만 사용할 수 있는 변수 -> 함수 안에 선언
+
+        var scope = 10; // 전역 변수
+
+        function myFnc() {
+            var scope = 50; // 지역 변수
+
+            alert(scope); // 함수 스코프에서는 지역 변수 데이터를 가져온다. 50 출력
+        }
+
+        alert(score); // 함수 스코프 밖에서는 전역 변수 데이터를 가져온다. 10 출력
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
