@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콘텐츠 탐색 선택자 예제 1</title>
+    <script src="../jQuery/jquery.js"></script>
+    <script>
+        // 콘텐츠 탐색 선택자
+        // 요소 또는 속성의 포함 여부에 따라 특정 요소를 선택하는 선택자다.
+        
+        // contains(), contents(), has(), not(), end() 탐색 선택자
+        // contains() : 선택한 요소 중 지정한 텍스트를 포함하는 요소만 선택
+        // contents() : 선택한 요소의 하위 요소 중 1 깊이의 텍스트와 태그 노드를 선택
+        // has() : 선택한 요소 중 지정한 태그를 포함하는 요소만 선택
+        // not() : 선택한 요소 중 지정한 요소만 제외한 채 선택
+        // end() : 필터링되기 이전의 선택자가 적용되도록 함
+
+        // 기본형
+        // $("요소 선택:contains(텍스트)");
+        // $("요소 선택").contents(); 
+        // $("요소 선택:has(요소명)"); / $("요소 선택").has("요소명"); 
+        // $("요소 선택:not(제외할 요소 선택)"); / $("요소 선택").not(제외할 요소 선택); 
+        // $("요소 선택").탐색선택자().end();
+
+        $(function() {
+            $("#inner_1 p:contains(내용1)") // 선택한 <p> 요소 중 "내용1"을 포함하는 요소만 선택
+            .css({"background-color":"#ff0"});
+
+            $("#inner_1 p:has(strong)") // 선택한 <p> 요소 중 <strong> 요소를 포함하는 요소만 선택
+            .css({"background-color":"#0ff"});
+
+            $("#outer_wrap").contents() // id 값이 "outer_wrap"인 요소의 하위 요소의 텍스트와 태그 노드 선택
+            .css({"border":"1px dashed #00f"});
+
+            $("#inner_2 p").not(":first") // id 값이 "inner_2"인 요소의 하위 <p> 요소에서 첫 번째 요소만 제외하고 선택
+            .css({"background-color":"#0f0"});
+
+            $("#inner_2 p").eq(2).end() // id 값이 "inner_2"인 요소의 하위 <p> 요소에서 인덱스가 2인 요소를 선택한다.
+                                        // 하지만 다시 end() 메서드를 적용하기 때문에 인덱스를 선택하기 전의 선택자가 적용된다.
+            .css({"color":"#f00"});
+        })
+    </script>
+</head>
+<body>
+    <div id="outer_wrap">
+        <h1>콘텐츠 탐색 선택자</h1>
+        <section id="inner_1">
+            <h1>contains(), contents(), has()</h1>
+            <p>
+                <span>내용1</span>
+            </p>
+            <p>
+                <strong>내용2</strong>
+            </p>
+            <p>
+                <span>내용3</span>
+            </p>
+        </section>
+        <section id="inner_2">
+            <h1>not(), end()</h1>
+            <p>내용4</p>
+            <p>내용5</p>
+            <p>내용6</p>
+        </section>
+    </div>
+</body>
+</html>
