@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 선택자 예제 1</title>
+    <script src="../jQuery/jquery.js"></script>
+    <script>
+        // 선택자
+        // HTML 요소를 선택해 가져오는 것
+        // CSS 선택자와 마찬가지로 선택한 요소의 디자인 속성을 적용할 때 사용할 수 있다.
+        // 단, '정적'인 CSS와는 달리 제이쿼리 선택자를 사용하면 '동적'으로 스타일을 적용할 수 있다.
+        
+        // 문서 객체 모델(DOM)
+        // HTML 문서 객체 구조를 말한다. ex) <html>, <head>, <body> 등 ..
+        // 문서 객체 모델에서 모든 태그를 객체로 부르며, 태그에는 기능과 속성이 포함되어있다.
+        // ** HTML 문서 객체 구조는 별도로 학습할 것 **
+        
+        // 선택자 사용
+        // 선택자를 사용하기 위해서는 문서 객체를 불러와야 한다.
+        // 이 때, 문서 객체를 먼저 불러온 다음 선택자를 실행하여 문서 객체를 선택하는 순서로 실행되게끔 코드를 작성해야 한다.
+
+        // 선택자를 사용하여 선택한 요소에 지정한 스타일 적용
+        // 기본형 1 : $("CSS 선택자").css("스타일 속성명", "값"); -> 선택한 요소에 지정한 스타일을 적용
+        // 기본형 2 : $("CSS 선택자").css("속성명", "값"); -> 선택한 요소에 지정한 속성을 적용
+
+        $(function() {
+            $("#title").css("color", "blue");
+        });
+    </script>
+</head>
+<body>
+    <h1 id="title">제목</h1>
+</body>
+</html>
