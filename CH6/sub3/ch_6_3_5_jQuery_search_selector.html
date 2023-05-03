@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 선택자 예제 6</title>
+    <script src="../jQuery/jquery.js"></script>
+    <script>
+        // 탐색 선택자
+        // 탐색 선택자를 사용하면 기본 선택자로 선택한 요소 중 원하는 요소를 한 번 더 탐색해서 좀 더 정확하게 선택할 수 있다.
+        // ex) 배열의 인덱스를 사용하는 위치 탐색 선택자 / 배열에 담겨진 요소 중 지정된 속성과 값으로 선택하는 속성 탐색 선택자
+
+        // 위치 탐색 선택자
+        // 기본 선택자로 선택한 요소는 배열에 담긴다.
+        // 이때 배열의 인덱스를 사용하면 특정 요소를 좀 더 정확하게 선택할 수 있다.
+        // 위치 탐색 선택자의 종류는 별도로 정리한다.
+
+        // only-child / slice(index) 선택자
+        // only-child : 선택한 요소가 '부모 요소에게 하나뿐인 자식 요소'인 경우에 선택한다.
+        // slice(start index, end index) : 선택한 요소의 지정 구간 인덱스의 요소를 선택한다.
+        // 기본형 : $("요소 선택:only-child"); / $("요소 선택").slice(start index, end index);
+
+        $(function(){
+            $("#menu1 li").slice(1,3).css({"background-color":"#ff0"});
+            $("li:only-child").css({"background-color":"#0ff"});
+        });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용 1-1</li>
+        <li>내용 1-2</li>
+        <li>내용 1-3</li>
+        <li>내용 1-4</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용 2-1</li>
+    </ul>
+</body>
+</html>

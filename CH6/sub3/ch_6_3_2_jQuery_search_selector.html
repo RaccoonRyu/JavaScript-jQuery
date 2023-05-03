@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 선택자 예제 3</title>
+    <script src="../jQuery/jquery.js"></script>
+    <script>
+        // 탐색 선택자
+        // 탐색 선택자를 사용하면 기본 선택자로 선택한 요소 중 원하는 요소를 한 번 더 탐색해서 좀 더 정확하게 선택할 수 있다.
+        // ex) 배열의 인덱스를 사용하는 위치 탐색 선택자 / 배열에 담겨진 요소 중 지정된 속성과 값으로 선택하는 속성 탐색 선택자
+
+        // 위치 탐색 선택자
+        // 기본 선택자로 선택한 요소는 배열에 담긴다.
+        // 이때 배열의 인덱스를 사용하면 특정 요소를 좀 더 정확하게 선택할 수 있다.
+        // 위치 탐색 선택자의 종류는 별도로 정리한다.
+
+        // eq(index) / lt(index) / gt(index)
+        // eq(index) : 선택한 요소 중 지정한 인덱스가 참조하는 요소만 선택
+        // lt(index) : 선택한 요소 중 지정한 인덱스보다 작은 인덱스를 참조하는 요소만 선택
+        // gt(index) : 선택한 요소 중 지정한 인덱스보다 큰 인덱스를 참조하는 요소만 선택
+        // 기본형 : $("요소 선택:eq(index)") or $("요소 선택").eq(index) / $("요소 선택":lt(index)) / $("요소 선택":gt(index))
+
+        $(function(){
+            $("#menu li").eq(2).css({"background-color":"#ff0"});
+            $("#menu li:lt(2)").css({"background-color":"#0ff"});
+            $("#menu li:gt(2)").css({"background-color":"#f0f"});
+        })
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용 1</li>
+        <li>내용 2</li>
+        <li>내용 3</li>
+        <li>내용 4</li>
+        <li>내용 5</li>
+    </ul>
+</body>
+</html>
