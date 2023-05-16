@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 조작 메서드 예제 2</title>
+    <script src="../jQuery/jquery.js"></script>
+    <script>
+        // 속성 조작 메서드
+        // 요소의 속성을 조작할 때 사용하는 메서드
+
+        // attr() / removeAttr() 메서드
+        // attr() : 선택한 요소에 새 속성을 생성하거나 기존의 속성을 변경할 때 또는 요소의 속성값을 불러올 때 사용
+        // removeAttr() : 선택한 요소에서 기존의 속성을 삭제할 때 사용
+
+        // attr() 기본형
+        // $("요소 선택").attr("속성명"); -> 선택한 요소의 지정한 속성값을 가져옴
+        // $("요소 선택").attr("속성명", "새 값"); -> 요소를 선택하여 지정한 속성값을 적용함
+        // $("요소 선택").attr({"속성명1" : "새 값1", "속성명2" : "새 값2", ... , "속성명n" : "새 값n" }); -> 요소를 선택하여 지정한 여러개의 속성값을 적용함
+
+        // removeAttr() 기본형
+        // $(요소 선택).removeAttr("속성");
+
+        $(function() {
+            var srcVal = $("#sec_1 img").attr("src"); // id 값이 "sec_1"인 요소의 하위 img 요소를 src값을 srcVal에 저장
+            console.log(srcVal);
+
+            $("#sec_1 img")
+            .attr({
+                "width" : 200,
+                "src" : srcVal.replace("1.jpg", "2.jpg"),
+                "alt" : "바위" // 여기까지 id 값이 "sec_1"인 요소의 하위 img 요소를 선택하여 각각의 값을 지정한 값으로 바꾸거나 새로 지정하는 부분
+            })
+            .removeAttr("border");
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <section id="sec_1">
+        <h2>이미지 속성</h2>
+        <p>
+            <img src="images/math_img_1.jpg" alt="가위" border="2">
+        </p>
+    </section>
+</body>
+</html>
