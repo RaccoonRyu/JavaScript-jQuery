@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 편집 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 객체 편집 메서드
+        // 선택한 요소를 복제하거나 새 요소를 생성하는 메서드
+        // 그리고 복제하거나 새로 생성한 요소를 의도한 위치에 삽입하고 선택한 요소를 삭제하는 메서드
+        
+        // before(), insertBefore(), after(), insertAfter()
+        // before(), insertBefore() : 선택한 요소의 이전 위치에 새 요소를 생성
+        // after(), insertAfter() : 선택한 요소의 다음 위치에 새 요소를 생성
+
+        // 기본형
+        // $("요소 선택").before("새 요소");
+        // $("새 요소").insertBefore("요소 선택");
+        // $("요소 선택").after("새 요소");
+        // $("새 요소").insertAfter("요소 선택");
+
+        $(function(){
+            $("#wrap p:eq(2)").after("<p>After</p>"); // 선택한 요소 다음에 새 요소를 생성
+            $("<p>insertAfter</p>").insertAfter("#wrap p:eq(1)"); // 선택한 요소 다음에 새 요소를 생성
+
+            $("#wrap p:eq(1)").before("<p>Before</p>"); // 선택한 요소 이전에 새 요소를 생성
+            $("<p>insertAfter</p>").insertBefore("#wrap p:eq(0)"); // 선택한 요소 이전에 새 요소를 생성
+        });
+    </script>    
+</head>
+<body>
+    <div id="wrap">
+        <p>내용 1</p>
+        <p>내용 2</p>
+        <p>내용 3</p>
+    </div>
+</body>
+</html>
