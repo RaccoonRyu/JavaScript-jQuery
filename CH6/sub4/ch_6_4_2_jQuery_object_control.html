@@ -5,15 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제이쿼리 객체 조작 메서드 예제 3</title>
-    <script src="../jQuery/jquery.js"></script>
+    <script src="/jQuery/jquery.js"></script>
     <script>
         // 속성 조작 메서드
         // 요소의 속성을 조작할 때 사용하는 메서드
 
-        
+        // addClass(), removeClass(), toggleClass(), hasClass() 메서드
+        // addClass() : 선택한 요소에 클래스를 생성
+        // removeClass() : 선택한 요소에서 지정한 클래스를 삭제
+        // toggleClass() : 선택한 요소에 지정한 클래스가 없으면 생성, 있으면 삭제
+        // hasClass() : 선택한 요소에 지정한 클래스가 있으면 true를, 없으면 false를 반환
+
+        // 기본형
+        // $("요소 선택").addClass("class 값"); -> 요소를 선택하여 지정한 class 값 생성
+        // $("요소 선택").removeClass("class 값"); -> 요소를 선택하여 지정한 class 값 삭제
+        // $("요소 선택").toggleClass("class 값"); -> 요소를 지정하여 class 값 있으면 삭제, 없으면 생성
+        // $("요소 선택").hasClass("class 값"); -> 선택한 요소에 지정한 class 값 있으면 true, 없으면 false 반환
+
+        $(function(){
+            $("#p1").addClass("aqua");
+            $("#p2").removeClass("red");
+            $("#p3").toggleClass("green");
+            $("#p4").toggleClass("green");
+            $("#p6").text($("#p5").hasClass("yellow"));
+        });
     </script>
+<style>
+    .aqua { background-color: #0ff; }
+    .red { background-color: #f00; }
+    .green { background-color: #0f0; }
+    .yellow { background-color: #ff0; }
+</style>    
 </head>
 <body>
-    
+    <p id="p1">내용 1</p>
+    <p id="p2" class="red">내용 2</p>
+    <p id="p3">내용 3</p>
+    <p id="p4" class="green">내용 4</p>
+    <p id="p5" class="yellow">내용 5</p>
+    <p id="p6"></p>
 </body>
 </html>
