@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 수치 조작 방법 예제 2</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 수치 조작 메서드
+        // 요소의 속성을 조작할 때 사용하는 메서드
+
+        // 요소 위치 메서드
+        // position(), offset()
+        // position() : 포지션 기준이 되는 요소를 기준으로, 선택한 요소에서 가로/세로로 떨어진 위치의 좌표값을 반환/변경시 사용
+        // offset() : 문서(document)를 기준으로 선택한 요소의 가로/세로로 떨어진 위치의 자표값을 반환/변경시 사용
+
+        // 기본형
+        // $(요소 선택).position().[ left | right | top | bottom ];
+        // -> 포지션 기준이 되는 요소를 기준으로 선택한 요소의 위치 좌표값을 반환
+        // $(요소 선택).offset().[ left | top ];
+        // -> 문서(document)를 기준으로 선택한 요소의 위치 좌표값을 반환
+
+        $(function(){
+            var txt1 = $(".txt_1 span"),
+                txt2 = $(".txt_2 span"),
+                box = $(".box");
+
+            var off_t = box.offset().top; // 100 저장
+            var pos_t = box.position().top; // 50 저장
+
+            txt1.text(off_t);
+            txt2.text(pos_t);
+        });
+    </script>
+<style>
+    * { margin: 0;
+        padding: 0;
+    }
+
+    #box_wrap {
+        width: 300px;
+        height: 200px;
+        margin: 50px auto 0;
+        position: relative;
+        background-color: #ccc;
+    }
+
+    .box {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 100px;
+        top: 50px;
+        background-color: #f00;
+    }
+</style>    
+</head>
+<body>
+    <div id="box_wrap">
+        <p class="box">박스</p>
+    </div>
+    <p class="txt_1">절대 top 위치값 : <span></span></p>
+    <p class="txt_2">상대 top 위치값 : <span></span></p>
+</body>
+</html>
