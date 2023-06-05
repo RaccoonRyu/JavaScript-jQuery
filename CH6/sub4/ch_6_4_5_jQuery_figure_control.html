@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 수치 조작 방법 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 수치 조작 메서드
+        // 요소의 속성을 조작할 때 사용하는 메서드
+        
+        // 요소의 높이 / 너비 메서드
+        // height(), width(), innerHeight(), innerWidth(), outerHeight(), outerWidth()
+        // height(), width() : 여백 및 선 두께를 제외한 순수 요소의 높이/너비 값을 계산
+        // innerHeight(), innerWidth() : 여백을 포함한 요소의 높이/너비 값을 계산
+        // outerHeight(), outerWidth() : 여백 및 선을 포함한 요소의 높이/너비 값을 계산
+
+        // 기본형
+        // $("요소 선택").height(); / $("요소 선택").width();
+        // $("요소 선택").height(값); / $("요소 선택").width(값);
+        // -> 요소의 높이/넓이 값을 반환 또는 변경
+        // $("요소 선택").innerHeight(); / $("요소 선택").innerWidth();
+        // $("요소 선택").innerHeight(값); / $("요소 선택").innerWidth(값);
+        // -> 여백을 포함한 요소의 높이/넓이 값을 반환 또는 변경
+        // $("요소 선택").outerHeight(); / $("요소 선택").outerWidth();
+        // $("요소 선택").outerHeight(값); / $("요소 선택").outerWidth(값);
+        // -> 여백 및 선 두께를 포함한 요소의 높이/넓이 값을 반환 또는 변경
+
+        $(function(){
+            var w1 = $("#p1").width();
+            console.log(w1);
+
+            var w2 = $("#p1").innerWidth();
+            console.log(w2);
+
+            var w3 = $("#p1").outerWidth();
+            console.log(w3);
+
+            $("#p2")
+            .outerWidth(100)
+            .outerHeight(100);
+        });
+    </script>
+<style>
+    * { padding: 0; }
+
+    #p1, #p2 {
+        width: 100px;
+        height: 50px;
+        padding: 20px;
+        border: 5px solid #000;
+        background-color: #ff0;
+    }
+</style>    
+</head>
+<body>
+    <h1>수치 조작 메서드</h1>
+    <p id="p1">내용 1</p>
+    <p id="p2">내용 2</p>
+</body>
+</html>
