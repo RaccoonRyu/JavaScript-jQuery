@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 조작 메서드 예제 4</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // val() 메서드
+        // 선택한 폼 요소의 value 속성값을 가져오거나 새 값을 적용할 때 사용
+
+        // 기본형
+        // $("요소 선택").val(); -> 선택한 폼 요소의 value 속성값을 가져온다.
+        // $("요소 선택").val("새 값"); -> 요소를 선택하여 value 속성에 새 값을 적용한다.
+
+        $(function(){
+            var result_1 = $("#user_name").val();
+            console.log(result_1); // 용대리 출력
+
+            $("#user_id").val("javascript");
+
+            var result_2 = $("#user_id").prop("defaultValue"); // value 속성의 초깃값을 알려주는 prop("defaultValue") 메서드
+            console.log(result_2); // hello 출력
+        });
+    </script>
+</head>
+<body>
+    <h1>객체 조작 및 생성</h1>
+    <form action="#" id="form_1">
+        <p>
+            <label for="user_name">이름</label> <input type="text" name="user_name" id="user_name" value="용대리">
+        </p>
+        <p>
+            <label for="user_id">아이디</label> <input type="text" name="user_id" id="user_id" value="hello">
+        </p>
+    </form>
+</body>
+</html>
