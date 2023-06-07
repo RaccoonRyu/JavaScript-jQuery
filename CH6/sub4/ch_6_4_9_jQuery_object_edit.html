@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 편집 예제 2</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 객체 편집 메서드
+        // 선택한 요소를 복제하거나 새 요소를 생성하는 메서드
+        // 그리고 복제하거나 새로 생성한 요소를 의도한 위치에 삽입하고 선택한 요소를 삭제하는 메서드
+
+        // append(), appendTo(), prepend(), prependTo() 메서드
+        // append(), appendTo() : 선택한 요소 내의 마지막 위치에 새 요소를 생성
+        // prepend(), prependTo() : 선택한 요소 내의 앞 위치에 새 요소를 생성하고 추가
+
+        // 기본형
+        // $(요소 선택).append(새 요소); / $(새 요소).appendTo(요소 선택); -> 선택한 요소 내의 마지막 위치에 새 요소를 생성하고 추가
+        // $(요소 선택).prepend(새 요소); / $(새 요소).prependTo(요소 선택); -> 선택한 요소 내의 앞 위치에 새 요소를 생성하고 추가
+
+        $(function(){
+            $("<li>appendTo</li>").appendTo("#listZone"); // 선택한 요소의 맨 뒤에 새 요소를 생성
+            $("#listZone").prepend("<li>prepend</li>"); // 선택한 요소의 맨 앞에 새 요소를 생성
+        });
+
+    </script>
+</head>
+<body>
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>
+</body>
+</html>
