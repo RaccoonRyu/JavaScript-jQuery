@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 편집 예제 5</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 객체 편집 메서드
+        // 선택한 요소를 복제하거나 새 요소를 생성하는 메서드
+        // 그리고 복제하거나 새로 생성한 요소를 의도한 위치에 삽입하고 선택한 요소를 삭제하는 메서드
+
+        // unwrap(), wrap(), wrapAll(), wraplnner() 메서드
+        // unwrap() : 선택한 요소의 부모 요소를 삭제한다.
+        // wrap() : 선택한 요소를 각각 새 요소로 감싼다.
+        // wrapAll() : 선택한 요소를 한꺼번에 새 요소로 감싼다.
+        // wrapInner() : 선택한 요소의 모든 하위 요소를 새 요소로 감싼다.
+
+        // 기본형
+        // $("요소 선택").unwrap(); -> 선택한 요소의 부모 요소를 삭제
+        // $("요소 선택").wrap(새 요소); -> 선택한 요소를 각각 새 요소로 감싼다.
+        // $("요소 선택").wrapAll(새 요소); -> 선택한 요소를 한꺼번에 새 요소로 감싼다.
+        // $("요소 선택").wrapInner(새 요소); -> 선택한 요소의 모든 하위 요소를 새 요소로 감싼다.
+
+        $(function(){
+            $("strong").unwrap(); // <strong> 요소를 감싸는 부모 요소를 제거
+            $(".ct1").wrap("<div/>"); // class 값이 ct1인 요소를 <div> 요소로 감싼다.
+            $(".ct2").wrapAll("<div/>"); // class 값이 ct1인 요소를 <div> 요소로 감싼다.
+            $("li").wrapInner("<h3/>"); // <li> 요소의 모든 하위 요소를 <h3> 요소로 감싼다.
+        });
+    </script>
+<style>
+    div { background-color: aqua; }
+</style>    
+</head>
+<body>
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <p class="ct1">내용 1</p>
+    <p class="ct1">내용 2</p>
+    <p class="ct2">내용 3</p>
+    <p class="ct2">내용 4</p>
+    <ul>
+        <li>내용 3</li>
+        <li>내용 3</li>
+    </ul>
+</body>
+</html>
