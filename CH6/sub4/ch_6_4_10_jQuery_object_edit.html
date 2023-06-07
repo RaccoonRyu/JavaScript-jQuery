@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 편집 예제 3</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 객체 편집 메서드
+        // 선택한 요소를 복제하거나 새 요소를 생성하는 메서드
+        // 그리고 복제하거나 새로 생성한 요소를 의도한 위치에 삽입하고 선택한 요소를 삭제하는 메서드
+
+        // clone(), empty(), remove() 메서드
+        // clone() : 선택한 요소 복제
+        // empty() : 선택한 요소의 모든 하위 요소를 삭제
+        // remove() : 선택한 요소를 삭제
+
+        // 기본형
+        // $("요소 선택").clone( [ true | false ] ); -> 선택한 요소를 복제. 인자값이 true이면 이벤트까지 복제하고, false면 요소만 복제 (기본값은 false)
+        // $("요소 선택").empty(); -> 선택한 요소의 모든 하위 요소를 삭제
+        // $("요소 선택").remove(); -> 선택한 요소를 삭제
+
+        $(function(){
+            var copyObj = $(".box1").children().clone(); // class 값이 box1인 요소의 모든 자식 요소를 복제하고 copyObj에 참조시킨다.
+
+            $(".box2").remove(); // class 값이 box2인 요소를 삭제
+
+            $(".box3").empty(); // class 값이 box3인 요소의 모든 하위 요소를 삭제
+            $(".box3").append(copyObj); // copyObj에 저장된 요소를 class 값이 box3인 요소 맨 뒤에 추가
+        });
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <p>내용 1</p>
+        <p>내용 2</p>
+    </div>
+    <div class="box2">
+        <p>내용 3</p>
+        <p>내용 4</p>
+    </div>
+    <div class="box3">
+        <p>내용 5</p>
+        <p>내용 6</p>
+    </div>
+</body>
+</html>
