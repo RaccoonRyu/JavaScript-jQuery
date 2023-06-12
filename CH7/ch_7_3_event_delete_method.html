@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 제거 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 이벤트 제거 메서드
+        // off() : 이벤트를 제거하는 메서드
+
+        // 기본형
+        // $("이벤트 대상").off("제거할 이벤트 종류");
+
+        $(function() {
+            $(".btn1").click(function() {
+                $(".btn1").parent().next().css({"color" : "#f00"});
+            });
+
+            $(".btn2").on({
+                "mouseover focus" : function() {
+                    $(".btn2").parent().next().css({"color":"#0f0"});
+                }
+            });
+
+            $(".btn1").off("click"); // 버튼 1에 등록된 클릭 이벤트를 제거
+            $(".btn2").off("mouseover focus"); // 버튼2에 등록된 마우스 오버, 포커스 이벤트를 제거
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼 1</button>
+    </p>
+    <p>내용 1</p>
+    <p>
+        <button class="btn2">버튼 2</button>
+    </p>
+    <p>내용 2</p>
+</body>
+</html>
