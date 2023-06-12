@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 등록 메서드 예제 2</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 이벤트 등록 메서드
+        // 방문자가 지정한 요소에서 어떠한 특정 동작이 일어났을 때 저장된 코드를 실행시킬 수 있는 메서드
+        // 단독 이벤트 등록 메서드 : 하나의 이벤트(= 1개 동작에 대한 이벤트)만 등록할 수 있는 메서드 ex) 요소를 클릭했을 때 (= 1개 동작)
+        // 그룹 이벤트 등록 메서드 : 2개 이상의 이벤트를 등록할 수 있는 메서드
+
+        // 이벤트 등록 방식
+        // 단독 이벤트 등록 : 이벤트 대상에 한 가지 동작에 대한 이벤트를 등록
+        // 그룹 이벤트 등록 : 이벤트 대상에 두 가지 이상의 동작에 대한 이벤트를 등록
+
+        // 단독 이벤트 등록 메서드 기본형
+        // $("이벤트 대상 선택")
+        // .이벤트 등록 메서드(function() { 자바스크립트 코드; });
+
+        // 그룹 이벤트 등록 메서드 기본형
+        // on() 메서드를 사용하여 이벤트를 등록한다.
+        // 1) $("이벤트 대상 선택").on("이벤트 종류1 ...  이벤트 종류n", function(){ 자바스크립트 코드; });
+        // 2) $("이벤트 대상 선택").on({"이벤트 종류1 ... 이벤트 종류n" : function(){ 자바스크립트 코드; } });
+        // 3) $("이벤트 대상 선택").on({ "이벤트 종류1" : function(){ 자바스크립트 코드; }, ... , "이벤트 종류n" : function(){ 자바스크립트 코드; } });
+        
+        $(function() {
+            $("#btn1").click(function(){
+                $("#btn1").parent().next().css({"color" : "#f00"});
+            }); // 단독 이벤트 등록 메서드 click
+
+            $("#btn2").on({
+                "mouseover focus" : function() {
+                    $("#btn2").parent().next().css({"color" : "#0f0"});
+                }, // 버튼2에 마우스 포인터를 올리거나 포커스를 이동하면 글자를 초록색으로 변경
+                "mouseout blur" : function() {
+                    $("#btn2").parent().next().css({"color" : "#000"});
+                } // 버튼2에서 다른 요소로 마우스 포인터를 옮기거나 포커스를 이동하면 글자를 검은색으로 변경
+            }); // 그룹 이벤트 등록 메서드 (2번 방법)
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button id="btn1">버튼 1</button>
+    </p>
+    <p>내용 1</p>
+    <p>
+        <button id="btn2">버튼 2</button>
+    </p>
+    <p>내용 2</p>
+</body>
+</html>
