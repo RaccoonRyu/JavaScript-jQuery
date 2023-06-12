@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 등록 메서드 예제 3</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 강제로 이벤트 발생시키기
+        // 이벤트가 강제로 발생했다
+        // -> 사용자에 의해 발생한 이벤트가 아님
+        // -> 핸들러에 의해 자동으로 이벤트가 발생한 것
+        
+        // 핸들러에 의해 이벤트를 강제로 발생시키는 방법
+        // 1) 단독 이벤트 등록 메서드를 사용
+        // 2) trigger() 메서드를 사용
+
+        // 기본형
+        // $("이벤트 대상").단독 이벤트 등록 메서드();
+        // $("이벤트 대상").trigger("이벤트 종류");
+
+        $(function() {
+            $(".btn1").click(function() {
+                $(".btn1").parent().next().css({"color" : "#f00"});
+            }); // 버튼1에 click 이벤트가 발생하여 이벤트 핸들러가 실행됨
+
+            $(".btn2").on({
+                "mouseover focus" : function() {
+                    $(".btn2").parent().next().css({"color" : "#0f0"});
+                    console.log("올렸당");
+                }
+            }); // 버튼2에 마우스 포인터를 올리면 이벤트 핸들러(function() { 자바스크립트 코드; })가 자동으로 실행됨
+
+            $(".btn1").click();
+            $(".btn2").trigger("mouseover"); // 버튼2에 마우스 포인터를 올리면 이벤트 핸들러(function() { 자바스크립트 코드; })가 자동으로 실행됨
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼 1</button>
+    </p>
+    <p>내용 1</p>
+    <p>
+        <button class="btn2">버튼 2</button>
+    </p>
+    <p>내용 2</p>
+</body>
+</html>
