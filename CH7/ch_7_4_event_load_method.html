@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩 이벤트 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 로딩 이벤트 메서드
+        // 사용자가 브라우저에서 HTML 문서를 요청하여 HTML 문서의 로딩이 완료되면 이벤트 핸들러를 실행하는 메서드
+
+        // ready(), load()
+        // ready() : 사용자가 사이트를 방문할 때 요청한 HTML 문서 객체(document)의 로딩이 끝나면 이벤트를 발생시키는 메서드
+        // load() : 외부에 연동된 소스(iframe, img, video)의 로딩이 끝나면 이벤트를 발생시키는 메서드
+
+        // 기본형
+        // $(document).ready(function() { 자바스크립트 코드; });
+        // $(document).on("ready", function() { 자바스크립트 코드; });
+        // $(window).load(function() { 자바스크립트 코드; });
+        // $(window).on("load", function() { 자바스크립트 코드; });
+
+        $(function() {
+            $(document).ready(function() { // HTML에 전체 요소가 로딩되면 이벤트 핸들러가 실행
+                var h1 = $(".img1").height();
+                console.log("ready : " , h1); // 0 출력
+            });
+
+            $(window).load(function() { // 외부 소스(이미지)가 완전히 로딩되면 이벤트 핸들러가 실행되며 이미지 높잇값이 출력
+                var h2 = $(".img1").height();
+                console.log("load : " , h2); // 300 출력
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <img src="http://place-hold.it/300X300" class="img1">
+    </p>
+</body>
+</html>
