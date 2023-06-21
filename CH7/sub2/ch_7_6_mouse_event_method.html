@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트 메서드 예제 2</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 마우스 이벤트
+        // 사용자가 사이트에서 마우스를 이용해서 취하는 모든 행위
+        // ex) 사용자가 지정한 요소에 마우스 포인터를 올리거나 클릭하는 등의 행위
+
+        // mouseover() / mouseout() / hover() 이벤트 메서드
+        // mouseover() : 선택한 요소에 마우스 포인터를 올릴 때마다 이벤트를 발생시키거나 선택한 요소에 mouseover 이벤트를 강제로 발생시킨다.
+        // mouseout() : 선택한 요소에서 마우스 포인터가 벗어날 때마다 이벤트를 발생시키거나
+        //              선택한 요소에 mouseout 이벤트를 강제로 발생시킨다.
+        // hover() : 선택한 요소에 마우스 포인터가 올라갈 때 / 선택한 요소에서 벗어날 때 각각 이벤트를 발생시킨다.
+        //           이 때 각각 다른 이벤트 핸들러를 실행시킨다.
+
+        // mouseover() 이벤트 기본형 (이벤트 등록)
+        // $("이벤트 대상 선택").mouseover(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("mouseover", function() { 자바스크립트 코드; });
+
+        // mouseover() 이벤트 강제 발생
+        // $("이벤트 대상 선택").mouseout();
+
+        // mouseout() 이벤트 기본형 (이벤트 등록)
+        // $("이벤트 대상 선택").mouseout(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("mouseout", function() { 자바스크립트 코드; });
+
+        // mouseout() 이벤트 강제 발생
+        // $("이벤트 대상 선택").mouseout();
+
+        // hover() 이벤트 기본형 (이벤트 등록)
+        // $("이벤트 대상 선택").hover(function() { 마우스 오버 시 자바스크립트 코드; }, function() { 마우스 아웃 시 자바스크립트 코드; });
+
+        $(function() {
+            $(".btn1").on({
+                "mouseover" : function() {
+                    $(".txt1").css({ "background-color" : "yellow" });
+                },
+                "mouseout" : function() {
+                    $(".txt1").css({ "background" : "none" });
+                }
+            });
+
+            $(".btn2").hover(function() {
+                $(".txt2").css({ "background-color" : "aqua" });
+            }, function() {
+                $(".txt2").css({ "background" : "none" });
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1"> Mouse Over / Mouse Out </button>
+    </p>
+    <p class="txt1"> 내용 1 </p>
+    <p>
+        <button class="btn2"> Hover </button>
+    </p>
+    <p class="txt2"> 내용 2 </p>
+</body>
+</html>
