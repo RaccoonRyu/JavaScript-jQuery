@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트 메서드 예제 3</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 마우스 이벤트
+        // 사용자가 사이트에서 마우스를 이용해서 취하는 모든 행위
+        // ex) 사용자가 지정한 요소에 마우스 포인터를 올리거나 클릭하는 등의 행위
+
+        // mouseenter() / mouseleave() 이벤트 메서드
+        // mouseenter() : 대상 요소의 경계 범위에 마우스 포인터가 들어오면 이벤트를 발생시킨다.
+        // mouseleave() : 대상 요소의 경계 범위에서 마우스 포인터가 완전히 벗어나면 이벤트를 발생시킨다.
+
+        // ** mouseover vs mouseenter **
+        // mouseover : 대상 요소에 마우스 포인터가 올라가면 발생
+        // mouseenter : 이벤트 대상이 포함된 범위에 마우스 포인터가 들어오면 발생
+
+        // ** mouseout vs mouseleave **
+        // mouseout : 대상 요소에서 마우스 포인터가 벗어나면 발생
+        // mouseleave : 대상이 포함된 범위에서 마우스 포인터가 완전히 벗어나면 발생
+
+        // mouseenter() 기본형 (이벤트 등록)
+        // $("이벤트 대상 선택").mouseenter(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("mouseenter", fucntion() { 자바스크립트 코드; });
+
+        // mouseenter() 이벤트 강제 발생
+        // $("이벤트 대상 선택").mouseleave();
+
+        // mouseleave() 기본형 (이벤트 등록)
+        // $("이벤트 대상 선택").mouseleave(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("mouseleave", fucntion() { 자바스크립트 코드; });
+
+        // mouseleave() 이벤트 강제 발생
+        // $("이벤트 대상 선택").mouseleave();
+
+        $(function() {
+            $("#box_1").on("mouseout", function () {
+                $("#box_1").css({"background-color" : "yellow"});
+            });
+
+            $("#box_2").on("mouseleave", function () {
+                $("#box_2").css({"background-color" : "pink"});
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>mouseout</h1>
+    <div id="box_1">
+        <p><a href="#">내용 1</a></p>
+        <p><a href="#">내용 2</a></p>
+        <p><a href="#">내용 3</a></p>
+    </div>
+
+    <h1>mouseleave</h1>
+    <div id="box_2">
+        <p><a href="#">내용 4</a></p>
+        <p><a href="#">내용 5</a></p>
+        <p><a href="#">내용 6</a></p>
+    </div>
+</body>
+</html>
