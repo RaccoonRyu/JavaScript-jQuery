@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 객체와 종류 예제 3</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+      // 키보드 접근성을 고려한 예제
+      // 요소에 마우스 이벤트에 대응하는 키보드 이벤트를 함께 등록해야
+      // 마우스가 없는 사용자도 키보드를 사용해 요소에 이벤트를 작동시킬 수 있다.
+
+      $(function () {
+        $("#btn1").data({ text: "javascript" }).on({
+          "mouseover focus": overFnc,
+          "mouseout blur": outFnc,
+        });
+
+        $("#btn2").data({ text: "welcome!" }).on({
+          "mouseover focus": overFnc,
+          "mouseout blur": outFnc,
+        });
+
+        function overFnc() {
+          $(".txt").text($(this).data("text"));
+        }
+
+        function outFnc() {
+          $(".txt").text("");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <p><button id="btn1">버튼 1</button></p>
+    <p><button id="btn2">버튼 2</button></p>
+    <p class="txt"></p>
+  </body>
+</html>
