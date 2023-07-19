@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 종류 예제 5</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 키보드 이벤트
+        // 사용자가 키보드로 입력(키를 누름 / 키에서 손을 뗌)하면 발생하는 이벤트
+        
+        // keydown(), keyup(), keypress() 이벤트 메서드
+        // keydown() : 선택한 요소에서 키보드 자판을 눌렀을 때 이벤트를 발생시키거나 해당 이벤트를 강제로 발생 (한글키를 제외한 모든 키 입력시 발생)
+        // keypress() : 선택한 요소에서 키보드 자판을 눌렀을 때 이벤트를 발생시키거나 해당 이벤트를 강제로 발생 (단, 기능키에 대해서는 이벤트를 발생시키지 않음)
+        // keydown(), keypress()는 키보드 이벤트 핸들러에서 생성된 이벤트 객체의 속성을 이용하면 고유 키의 코드값을 구할 수 있음 (이를 이용해 단축키 기능을 만들 수 있음)
+        // keyup() : 자판의 키를 눌렀다 키에서 손을 떼면 이벤트를 발생시키거나 keyup 이벤트를 강제로 발생
+
+        // keydown(), keyup(), keypress() 이벤트 기본형
+        // keydown 이벤트 등록
+        // $("이벤트 대상 선택").keydown(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("keydown", function() { 자바스크립트 코드; });
+        // keydown 이벤트 강제 발생
+        // $("이벤트 대상 선택").keydown();
+
+        // keyup 이벤트 등록
+        // $("이벤트 대상 선택").keyup(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("keyup", function() { 자바스크립트 코드; });
+        // keyup 이벤트 강제 발생
+        // $("이벤트 대상 선택").keyup();
+
+        // keypress 이벤트 등록
+        // $("이벤트 대상 선택").keypress(function() { 자바스크립트 코드; });
+        // $("이벤트 대상 선택").on("keypress", function() { 자바스크립트 코드; });
+        // keypress 이벤트 강제 발생
+        // $("이벤트 대상 선택").keypress();
+
+        $(function() {
+            $(document).on("keydown", keyEventFnc);
+
+            function keyEventFnc(e) {
+                var direct = "";
+
+                switch (e.keyCode) {
+                    case 37:
+                        direct = "LEFT";
+                        break;
+                    case 38:
+                        direct = "TOP";
+                        break;
+                    case 39:
+                        direct = "RIGHT";
+                        break;
+                    case 40:
+                        direct = "BOTTOM";
+                        break;    
+                }
+
+              if (direct) {
+                $("#user_id").val(direct);
+              }
+            }
+        });
+    </script>
+</head>
+<body>
+    <p><input type="text" name="user_id" id="user_id"></p>
+</body>
+</html>
