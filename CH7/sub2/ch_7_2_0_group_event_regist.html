@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그룹 이벤트 등록 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 그룹 이벤트 등록 메서드
+        // 한 번에 2개 이상의 이벤트를 등록할 수 있는 메서드
+        // 선택한 요소에 이벤트 등록 메서드를 한 번만 적용하여 두 종류의 이벤트가 발생하도록 만들 수 있다.
+        // ex) 마우스 포인트를 올렸을 때 + 포커스가 생성되었을 때
+
+        // on() 메서드
+        // 선택한 요소에 이벤트를 등록한 이후에도 새롭게 생성되거나 복제된 요소에 이벤트를 적용할 수 있는 메서드
+        // 동적으로 생성되거나 복제된 요소에도 이벤트가 등록됨 (라이브 이벤트 등록 방식)
+        // ** ch_7_1_1의 on()은 이벤트 등록 후 다음에 생성되거나 복제된 요소에는 이벤트를 등록할 수 없음
+
+        // on() 라이브 이벤트 등록 방식 기본형
+        // $([document | "이벤트 대상의 상위 요소 선택"]).on("이벤트 종류", "이벤트 대상 선택", function() { 자바스크립트 코드; });
+
+        $(function() {
+            $(".btn_1.on").on("mouseover focus", function() {
+                alert("HELLO!");
+            });
+            $(".btn_1").addClass("on"); // 이벤트를 등록 후 class 값을 생성하면 이벤트가 정상적으로 등록되지 않음
+
+            $(document).on("mouseover focus", ".btn_2.on", function() {
+                alert("WELCOME!");
+            });
+            $(".btn_2").addClass("on"); // 라이브 이벤트 등록 방식으로 이벤트를 등록한 다음 class 값을 생성하면 이벤트가 정상적으로 등록된다
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼 1</button></p>
+        <p><button class="btn_2">버튼 2</button></p>
+    </div>
+</body>
+</html>
