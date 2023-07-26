@@ -14,9 +14,57 @@
 
         // $(this) 선택자
         // 이벤트 핸들러에서 $(this)를 사용하면 이벤트가 발생한 요소를 선택하여 추적할 수 있다.
+
+        // index() : 인덱스 반환 메서드
+        // 이벤트를 등록한 요소 중 이벤트가 발생한 요소의 인덱스 값을 반환
+
+        // index() 기본형
+        // $("이벤트 대상 선택").on("이벤트 종류", function() { $("이벤트 대상 선택").index(this) });
+
+        $(function() {
+            $(".menuWrap_1 a").on("click", function(e) {
+                e.preventDefault();
+
+                $(".menuWrap_1 a").css({
+                    "background-color" : "#fff"
+                });
+
+                $(this).css({
+                    "background-color" : "#ff0"
+                });
+            });
+
+            $(".menuWrap_2 a").on("click", function(e) {
+                e.preventDefault();
+
+                $(".menuWrap_2 a").css({
+                    "background-color" : "#fff"
+                });
+
+                var idx = $(".menuWrap_2 a").index(this);
+
+                $(".menuWrap_2 a").eq(idx).css({
+                    "background-color" : "#fff"
+                });
+
+                $(".idxNum").text(idx);
+            });
+        });
     </script>
 </head>
 <body>
-    
+    <h2>$(this)</h2>
+    <ul class="menuWrap_1">
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+    </ul>
+    <h2>index()</h2>
+    <ul class="menuWrap_2">
+        <li><a href="#">메뉴4</a></li>
+        <li><a href="#">메뉴5</a></li>
+        <li><a href="#">메뉴6</a></li>
+    </ul>
+    <p class="idxNum"></p>
 </body>
 </html>
