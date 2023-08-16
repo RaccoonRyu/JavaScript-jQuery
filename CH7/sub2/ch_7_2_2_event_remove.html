@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 제거 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 이벤트 제거 메서드
+        // 이벤트 제거 메서드를 사용하면 이전에 등록된 이벤트를 제거할 수 있다.
+
+        // off() / unbind() / undelegate()로 이벤트 해제
+        // 이벤트 등록 메서드에 따라 이벤트를 해제하는 방법이 다르다.
+        // on() 메서드 -> off() 메서드, bind() 메서드 -> unbind() 메서드, delegate() -> undelegate() 메서드로 이벤트를 해제한다.
+
+        // 이벤트 해제 메서드 기본형
+        // on() 이벤트 해제를 위한 off() 메서드
+        // - 기본 이벤트 제거 방식 : $("이벤트 대상 요소 선택").off("이벤트 종류");
+        // - 라이브 이벤트 제거 방식 : $([document | "이벤트 대상 상위 요소 선택"]).off("이벤트 종류", "이벤트 대상 요소 선택");
+
+        // bind() 이벤트 해제를 위한 unbind() 메서드
+        // $("이벤트 대상 요소 선택").unbind("이벤트 종류");
+
+        // delegate() 이벤트 해제를 위한 undelegate() 메서드
+        // - 기본 이벤트 제거 방식 : $("이벤트 대상 요소 선택").undelegate("이벤트 종류");
+        // - 라이브 이벤트 제거 방식 : $([document | "이벤트 대상의 상위 요소 선택"]).undelegate("이벤트 대상 선택", "이벤트 종류");
+
+        $(function() {
+            $(".btn_1").on("mouseover", function() {
+                alert("HELLO!");
+            });
+
+            $(document).on("mouseover", ".btn_2", function() {
+                alert("WELCOME!");
+            });
+
+            var btn_2 = $("<p><button class=\"btn_2\">버튼 2</button></p>");
+            $("#wrap").append(btn_2);
+
+            $(".del_1").on("click", function() {
+                $(".btn_1").off("mouseover");
+            });
+
+            $(".del_2").on("click", function() {
+                $(document).off("mouseover", ".btn_2");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼 1</button></p>
+    </div>
+    <p>
+        <p><button class="del_1">버튼 1 이벤트 해제</button></p>
+        <p><button class="del_2">버튼 2 이벤트 해제</button></p>
+    </p>
+</body>
+</html>
