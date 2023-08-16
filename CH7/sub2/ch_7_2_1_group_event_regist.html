@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그룹 이벤트 등록 예제 2</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 그룹 이벤트 등록 메서드
+        // 한 번에 2개 이상의 이벤트를 등록할 수 있는 메서드
+        // 선택한 요소에 이벤트 등록 메서드를 한 번만 적용하여 두 종류의 이벤트가 발생하도록 만들 수 있다.
+        // ex) 마우스 포인트를 올렸을 때 + 포커스가 생성되었을 때
+
+        // delegate() 이벤트
+        // 선택한 요소의 하위 요소에 이벤트를 등록하는 메서드
+        // 또한 이벤트를 등록한 이후에도 동적으로 생성된 요소와 복제된 요소에도 이벤트를 등록한다.
+
+        // delegeate() 이벤트 기본형
+        // $([document | "이벤트 대상의 상위 요소 선택"]).delegate("이벤트 대상 요소 선택", "이벤트 종류", function() { 자바스크립트 코드; });
+
+        // one() 이벤트
+        // 이벤트가 1회 발생하면 자동으로 등록된 이벤트가 제거되는 메서드
+        // 일회성 이벤트를 등록할 때 사용한다.
+        // 역시나 one() 이벤트 등록 메서드도 등록 방식에 따라 '라이브 이벤트'의 등록이 가능하다.
+
+        // one() 이벤트 기본형
+        // $("이벤트 대상 선택").one("이벤트 종류", function() { 자바스크립트 코드; });
+
+        // one() 라이브 이벤트 등록 방식
+        // $([document | "이벤트 대상의 상위 요소 선택"]).one("이벤트 종류", "이벤트 대상 요소 선택", function() { 자바스크립트 코드; });
+
+        $(function() {
+            $(".btn_wrap").delegate(".btn_1.on",
+                "mouseover focus", function() { // 마우스 포인터(포커스)를 올리면 경고창에 HELLO! 라는 메시지 출력
+                    alert("HELLO!");
+            });
+            $(".btn_1").addClass("on"); // 라이브 이벤트 방식으로 이벤트를 등록 => 새로 생성한 요소에도 이벤트가 적용됨
+
+            $(document).one("mouseover focus",
+                ".btn_2.on", function() { // 마우스 포인터(포커스)를 올리면 WELCOME! 이라는 메시지 출력
+                    alert("WELCOME!");
+            });
+            $(".btn_2").addClass("on"); // one() 이기 때문에 이벤트는 ㅂ회만 발생함 
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p class="btn_wrap">
+            <button class="btn_1">버튼 1</button>
+        </p>
+        <p>
+            <button class="btn_2">버튼 2</button>
+        </p>
+    </div>
+</body>
+</html>
