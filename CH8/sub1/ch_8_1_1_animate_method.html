@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 애니메이션 메서드
+        // 해당 메서드를 적용하면 스타일을 적용한 요소를 움직이게 할 수 있다.
+
+        // animate() 메서드
+        // 해당 메서드를 이용하면 선택한 요소에 다양한 동작 효과를 적용할 수 있다 ex) 요소를 앞으로 이동시키거나 점차 커지게하는 동작
+
+        // animate() 메서드의 기본형
+        // $("요소 선택").animate({스타일 속성}, 적용 시간, 가속도, 콜백 함수);
+        // 스타일 속성 : 애니메이션으로 적용할 스타일 속성
+        // 적용 시간 : 동작에 반응하는데 소요되는 시간
+
+        $(function() {
+            $(".btn1").on("click", function() {
+                $(".txt1").animate({
+                    marginLeft:"500px",
+                    fontSize:"30px"
+                },
+                2000, "linear", function() {
+                alert("모션 완료!");
+                });
+            });
+
+            $(".btn2").on("click", function() {
+                $(".txt2").animate({
+                    marginLeft:"+=50px"
+                },1000)
+            });
+        });
+    </script>
+<style>
+    .txt1{background-color: aqua;}
+    .txt2{background-color: pink;}
+</style>
+</head>
+<body>
+    <p><button class="btn1">버튼 1</button></p>
+    <span class="txt1">"500px" 이동</span>
+    <p><button class="btn2">버튼2 </button></p>
+    <span class="txt2">"50px"씩 이동</span>
+</body>
+</html>
