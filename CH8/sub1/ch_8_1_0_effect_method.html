@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효과 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+        // 효과 메서드를 이용하면 스타일(CSS)을 이용하는 것 보다 좀 더 역동적으로 동작을 조절하여 객체를 화려하게 숨기거나 보이게 만들 수 있다.
+        // 그리고 애니메이션 메서드까지 사용하면 선택한 요소에 다양한 동작까지 적용할 수 있다.
+
+        // 효과 메서드
+        // 선택한 요소를 역동적으로 숨겼다가 보이게 만드는 기능을 가진 메서드
+
+        // 효과 메서드 기본형
+        // $("요소 선택").효과 메서드(효과 소요 시간, 가속도, 콜백 함수);
+        // 효과 소요 시간 : 요소를 숨기거나 노출할 때 소요되는 시간 / 적용 방법은 slow, normal, fast 혹은 1,000, 500 (밀리초)를 사용
+        // 가속도 : 숨기거나 노출하는 동안의 가속도 / 적용 방법은 swing, linear
+        // 콜백 함수 : 노출과 숨김 효과가 끝난 후에 실행할 함수 (생략 가능)
+
+        // fadeTo()
+        // 기본형 : $("요소 선택").fadeTo(효과 소요 시간, 투명도, 콜백 함수);
+        // 투명도는 0 ~ 1 까지의 값 입력 가능. 1에 가까울수록 선명하게 보인다.
+
+        $(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function() {
+                $(".box").slideUp(1000, "linear", // slideUp 버튼을 클릭하면 class 값이 "box"인 요소가 위로 접히며 숨겨진다.
+                function() {
+                    $(".btn1").hide();
+                    $(".btn2").show(); // 그 다음 콜백 함수가 실행되어 sildeUp 버튼은 숨겨지고 fadeIn 버튼이 나타난다.
+                });
+            }); 
+
+            $(".btn2").on("click", function() {
+                $(".box").slideUp(1000, "swing",
+                function() {
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            $(".btn3").on("click", function() {
+                $(".box").slideToggle(1000, "linear"); // toggleSilde 버튼을 누르면 class 값이 "box"인 요소가 접히거나 펴짐
+            });
+
+            $(".btn4").on("click", function() {
+                $(".box").fadeTo("fast", 0.3); // fadeTo(0, 3)을 클릭하면 class 값이 "box"인 요소가 70% 투명해진다. (다시 클릭 시 투명화 취소)
+            });
+
+            $(".btn5").on("click", function() {
+                $(".box").fadeTo("fast", 1); // 다시 클릭 시 투명화가 취소 된다
+            });
+        });
+    </script>
+<style>
+    .content{
+        width:400px;
+        background-color: #eee;
+    }
+</style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        아 제이쿼리는 정말 잠이온다 드르렁퓨 커어어어
+    </div>
+</body>
+</html>
