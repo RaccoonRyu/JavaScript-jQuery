@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax 관련 메서드 예제 1</title>
+    <script src="/jQuery/jquery.js"></script>
+    <script>
+      // Ajax(Asynchronous JavaScript and XML)
+      // Ajax는 클라이언트가 비동기 방식으로 자바스크립트를 이용해 화면 전환 없이 서버측에 자료를 요청할 때 사용
+      // 여기서 클라이언트는 방문자 컴퓨터를, 서버는 서비스 제공 컴퓨터를 의미한다.
+
+      // Ajax 관련 메서드
+      // Ajax 기술 기반으로 제작된 자료(XML, HTML, JSON, 텍스트 등) 요청 메서드
+
+      // load() 메서드
+      // 사용자가 지정한 URL 주소에 데이터를 전송하고 외부 컨텐츠를 요청하여 가져올 때 사용
+      // 요청한 컨텐츠를 이용해 요소의 내용을 바꿀 수 있다.
+      // 기본형 : $(요소 선택).load(url, data, 콜백함수);
+
+      $(function () {
+        $("#newsWrap_1").load("/CH9/resource/jquery_ajax_news.html #news_1");
+
+        $("#newsWrap_2").load("/CH9/resource/jquery_ajax_news.html #news_2");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>LOAD 1</h1>
+    <div id="newsWrap_1"></div>
+    <h1>LOAD 2</h1>
+    <div id="newsWrap_2"></div>
+  </body>
+</html>
